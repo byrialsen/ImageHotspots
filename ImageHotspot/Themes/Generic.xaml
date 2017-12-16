@@ -1,4 +1,4 @@
-﻿<ResourceDictionary
+<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ImageHotspot.Themes"
@@ -18,7 +18,7 @@
                             Height="{TemplateBinding Diameter}" Width="{TemplateBinding Diameter}" Fill="{TemplateBinding Foreground}"
                             VerticalAlignment="Center" HorizontalAlignment="Center">
                         </Ellipse>
-                        
+
                         <ContentPresenter
                             VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Canvas>
@@ -26,5 +26,23 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
+
+    <Style TargetType="controls:HotspotImageControl">
+        <Setter Property="IsFocusEngagementEnabled" Value="True" />
+        <Setter Property="UseSystemFocusVisuals" Value="True" />
+        <Setter Property="Background" Value="{ThemeResource SystemAltMediumColor}" />
+        <Setter Property="Foreground" Value="{ThemeResource SystemBaseHighColor}" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:HotspotImageControl">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Image x:Name="Image" Source="{TemplateBinding Source}" Stretch="Uniform" />
+                        <Canvas x:Name="ItemCanvas" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

@@ -178,7 +178,7 @@ namespace ImageHotspot.Controls
                 System.Diagnostics.Debug.WriteLine("Left: " + Canvas.GetLeft(parent));
                 System.Diagnostics.Debug.WriteLine("Top:" + Canvas.GetTop(parent));
 
-                var res = this.TransformToVisual(parent);
+                //var res = this.TransformToVisual(parent);
 
                 Canvas.SetLeft(_extend, parent.ActualWidth * (CenterRelativeX / 100) - Diameter / 2);
                 Canvas.SetTop(_extend, parent.ActualHeight * (CenterRelativeY / 100) - Diameter / 2); ;

@@ -15,26 +15,29 @@
         </Grid.ColumnDefinitions>
         <Rectangle Fill="Gray" />
 
+        <controls:HotspotImageControl ItemsSource="{Binding Hotspots, Mode=TwoWay}" ItemDimension="50" Source="Assets/CvtCoreOverview.png" Grid.Column="1" Margin="20" >
+            <controls:HotspotImageControl.ItemTemplate>
+                <DataTemplate x:DataType="local:Hotspot">
+                    <Grid>
+                        <Ellipse Fill="Purple" />
+                        <SymbolIcon Symbol="Audio" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+
+            </controls:HotspotImageControl.ItemTemplate>
+        </controls:HotspotImageControl>
+
+
+
+        <!-- 
         <Grid x:Name="container" Margin="20" Grid.Column="1">
             <Image Source="Assets/CvtCoreOverview.png" Stretch="Uniform" />
-            <Canvas x:Name="hotspots">
+            <Canvas x:Name="hotspots" Background="Purple" Opacity="0.2">
                 <controls:HotspotControl Diameter="50" Foreground="Green" CenterRelativeX="50.0" CenterRelativeY="50.0">
                     <SymbolIcon Symbol="Account" Foreground="White"/>
                 </controls:HotspotControl>
             </Canvas>
         </Grid>
-
-        <!-- 
-        <Viewbox Margin="20" Stretch="Uniform" Grid.Column="1">
-            <Grid>
-                <Image Source="Assets/CvtCoreOverview.png" Grid.ColumnSpan="2" />
-                <Canvas>
-                    <controls:HotspotControl Diameter="100" Foreground="Green" CenterRelativeX="60.0" CenterRelativeY="80.0">
-                        <SymbolIcon Symbol="Account" Foreground="White"/>
-                    </controls:HotspotControl>
-                </Canvas>
-            </Grid>
-        </Viewbox>
         -->
     </Grid>
 </Page>
